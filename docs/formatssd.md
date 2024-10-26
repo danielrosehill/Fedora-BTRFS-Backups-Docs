@@ -25,9 +25,9 @@ The first step in this backup workflow is formatting the external backup device 
    quit
    ```
 
-4. **Format as Btrfs**:
+4. **Format as BTRFS**:
    ```bash
    sudo mkfs.btrfs /dev/sdc1
    ```
 
-This will format your SSD as a Btrfs filesystem with a single partition named "Backups."
+This will format your SSD as a BTRFS filesystem with a single partition named "Backups."

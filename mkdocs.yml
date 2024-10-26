@@ -1,5 +1,5 @@
 site_name: BTRFS Backups (Fedora Desktop)
 
 nav:
-  - Home: index.md
-  - Format SSD: formatssd.md
+  - Home: docs/index.md
+  - Format SSD: docs/formatssd.md
