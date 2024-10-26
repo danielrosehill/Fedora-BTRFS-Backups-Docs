@@ -40,6 +40,9 @@
                             <li class="nav-item">
                                 <a href="./" class="nav-link active" aria-current="page">Format SSD</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="../create-mountpoint/" class="nav-link">Create Mountpoint</a>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -54,7 +57,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../create-mountpoint/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -83,34 +86,28 @@
 
 <h3 id="step-1-format-your-external-ssd-add-a-btrfs-filesystem">Step 1: Format Your External SSD, Add A BTRFS Filesystem</h3>
 <p>The first step in this backup workflow is formatting the external backup device with a BTRFS filesystem (it's assumed that the external device you are using is formatted with something like a <code>FAT32</code> filesystem).</p>
-<p>## Instructions</p>
-<p>### Brief Guide to Connecting and Formatting an SSD on Fedora</p>
 <ol>
 <li>
 <p><strong>Connect the SSD</strong>: Plug the SSD into your Fedora computer via USB or SATA.</p>
 </li>
 <li>
 <p><strong>Identify the Device</strong>: Open a terminal and run:
-   <code>bash
-   lsblk</code>
+   <code>lsblk</code>
    Locate your SSD (e.g., <code>/dev/sdc</code>).</p>
 </li>
 <li>
-<p><strong>Create a Partition</strong>:
-   <code>bash
-   sudo parted /dev/sdc</code>
-   Then enter:
-   <code>bash
-   mklabel gpt
-   mkpart primary btrfs 1MiB 100%
-   quit</code></p>
-</li>
-<li>
-<p><strong>Format as BTRFS</strong>:
-   <code>bash
-   sudo mkfs.btrfs /dev/sdc1</code></p>
+<p><strong>Create a Partition</strong>:</p>
 </li>
 </ol>
+<p><code>sudo parted /dev/sdc</code></p>
+<p>Then enter:</p>
+<p><code>mklabel gpt
+   mkpart primary btrfs 1MiB 100%
+   quit</code></p>
+<ol>
+<li><strong>Format as BTRFS</strong>:</li>
+</ol>
+<p><code>sudo mkfs.btrfs /dev/sdc1</code></p>
 <p>This will format your SSD as a BTRFS filesystem with a single partition named "Backups."</p></div>
             </div>
         </div>
