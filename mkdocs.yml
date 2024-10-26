@@ -2,3 +2,4 @@ site_name: BTRFS Backups (Fedora Desktop)
 nav:
   - Home: index.md
   - Format SSD: formatssd.md
+  - Create Mountpoint: create-mountpoint.md
